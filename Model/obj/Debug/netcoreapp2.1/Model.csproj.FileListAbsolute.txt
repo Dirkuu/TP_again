@@ -1,0 +1,9 @@
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\bin\Debug\netcoreapp2.1\Model.deps.json
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\obj\Debug\netcoreapp2.1\Model.csprojAssemblyReference.cache
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\obj\Debug\netcoreapp2.1\Model.dll
+C:\Users\addlu1\source\repos\CasinoLibrary\Model\obj\Debug\netcoreapp2.1\Model.pdb
