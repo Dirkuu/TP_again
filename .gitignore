@@ -1,0 +1,13 @@
+#caches
+.vs/
+packages/
+
+*/obj/
+*/bin/
+
+*.cache
+*.dll
+*.pdb
+*.props
+*.targets
+*.CopyComplete
