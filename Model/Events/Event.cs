@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model.Events
 {
-    class Event
+    public class Event
     {
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace Model.Machine
+namespace Model
 {
     public class MachineState
     {
