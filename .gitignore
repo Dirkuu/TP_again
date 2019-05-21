@@ -1,9 +1,16 @@
 #caches
 .vs/
 packages/
+DatasManagment/bin/
+DatasManagment/obj/
+Model/bin/
+Model/obj/
+ModelUTests/bin/
+ModelUTests/obj/
 
 */obj/
 */bin/
+
 
 *.cache
 *.dll
