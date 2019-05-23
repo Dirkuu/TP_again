@@ -88,10 +88,7 @@ namespace DatasManagment
                     data.MachinesState.Add(mechState);
                     ++counter;
                 }
-                fileName = "Events.txt";
-                path = Path.Combine(Environment.CurrentDirectory, fileName);
-                StreamReader Events = new StreamReader(path, Encoding.UTF8);
-                counter = 0;
+
                 /*_________________________TODO___________________________________
                  * Finish rest of readers, it's going to be the same way as Client
                  */
@@ -101,5 +98,5 @@ namespace DatasManagment
         }
     }
 }
-    }
-}
+    
+

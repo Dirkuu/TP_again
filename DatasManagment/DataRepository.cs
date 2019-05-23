@@ -28,6 +28,12 @@ namespace DatasManagment
             this.DataBase.ClientList.Add(name);
         }
 
+        public void AddWorker(Worker name)
+        {
+
+            this.DataBase.WorkerList.Add(name);
+        }
+
         public void AddMachine(Machines machineId)
         {
             this.DataBase.MachinesDictionary.Add(machineId.Name, machineId);
@@ -58,13 +64,18 @@ namespace DatasManagment
         {
             return DataBase.MachinesDictionary.Values;
         }
+
+        public IEnumerable<Human> GetAllWorkers()
+        {
+            return DataBase.WorkerList;
+        }
         public void UpdateMachine(string id, Machines name)
         {
             DataBase.MachinesDictionary[id] = name;
         }
         public MachineState GetMachineState(Machines name)
         {
-            return DataBase.MachinesState.Find(x => x.Machine.Name == name.Name);
+            return DataBase.MachinesState.Find(x => x.Machine == name);
         }
         public IEnumerable<MachineState> GetAllStates()
         {
@@ -83,9 +94,9 @@ namespace DatasManagment
         {
             DataBase.MachinesDictionary.Remove(name.Name);
         }
-        public Human GetClient(int id)
+        public Client GetClient(int id)
         {
-            return DataBase.ClientList[id];
+            return (Client)DataBase.ClientList.Find( x=> x.ID == id);
         }
         public void UpdateClient(int id, Client name)
         {

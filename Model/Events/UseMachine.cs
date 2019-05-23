@@ -11,9 +11,10 @@ namespace Model.Events
 
         public UseMachine (int a, int b, Client arg, Machines argMachines)
         {
-            this.Client = arg;
+            client = arg;
             this.Machine = argMachines;
             outCome = Gamble(a, b);
+            Time = DateTimeOffset.Now;
 
         }
         private int Gamble (int a, int b)

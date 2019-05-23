@@ -20,6 +20,7 @@ namespace DatasManagment
             ClientList = new List<Human>();
             WorkerList = new List<Human>();
             EventCollection = new ObservableCollection<Event>();
+            machinesDictionary = new Dictionary<string, Machines>();
             EventCollection.CollectionChanged += Events_CollectionChanged;
         }
 

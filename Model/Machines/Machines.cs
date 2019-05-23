@@ -21,7 +21,7 @@ namespace Model
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"id {id} name {name} coins {coins}";
         }
     }
 }

@@ -9,5 +9,9 @@ namespace Model
         private int tokens;
 
         public int Tokens { get => tokens; set => tokens = value; }
+        public override string ToString()
+        {
+            return base.ToString() + $"tokens {tokens}";
+        }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Model;
-using Model.Events
+using Model.Events;
 
 namespace DatasManagment
 {
@@ -12,11 +12,48 @@ namespace DatasManagment
 
         public DataRepository DataRepository { get => dataRepository; set => dataRepository = value; }
 
-        public void AddVehicle(Machines Name)
+        public void FillMachine(Machines argMachine, Worker argWorker, int coins)
+        {
+            if (dataRepository.GetMachineState(argMachine).IsWorking
+                && dataRepository.GetMachineState(argMachine).IsTaken == false) {
+                var Event = new FillMachine(argWorker, argMachine, coins);
+                dataRepository.AddEvent(Event);
+                }
+
+
+        }
+
+        public void UseMachine(int a, int b, Client argClient, Machines argMachine)
+        {
+            if (dataRepository.GetMachineState(argMachine).IsWorking == true &&
+                dataRepository.GetMachineState(argMachine).IsTaken == false &&
+                dataRepository.GetClient(argClient.ID).Tokens > 0)
+
+
+            {
+        
+                var Event = new UseMachine(a, b, argClient, argMachine);
+                dataRepository.AddEvent(Event);
+                dataRepository.GetMachineState(argMachine).IsTaken = true;
+                dataRepository.GetClient(argClient.ID).Tokens--;
+
+            }
+        }
+
+        public void AddMachine(Machines Name)
         {
             if (!dataRepository.DataBase.MachinesDictionary.ContainsKey(Name.Id.ToString()))
                 dataRepository.AddMachine(Name);
-            else throw new Exception("You cannot add existing vehicle!");
+            else throw new Exception("You cannot add existing machine!");
+        }
+
+        public void AddClient(Client Name)
+        {
+            dataRepository.AddClient(Name);
+                            }
+        public void AddWorker(Worker name)
+        {
+            dataRepository.AddWorker(name);
         }
         public void AddState(MachineState state)
         {
@@ -24,13 +61,13 @@ namespace DatasManagment
                 dataRepository.AddState(state);
             else throw new Exception("This state already exist ");
         }
-        public void DeleteVehicle(Machines name)
+        public void DeleteMachine(Machines name)
         {
             if (dataRepository.DataBase.MachinesDictionary.Count == 0)
                 throw new Exception("There are no Maachines to delete!");
             if (dataRepository.DataBase.MachinesDictionary.ContainsKey(name.Id.ToString()))
                 dataRepository.DeleteMachine(name);
-            else throw new Exception("Data base doesn't contain vehicle like that!");
+            else throw new Exception("Data base doesn't contain machine like that!");
         }
         public void DeleteState(MachineState name)
         {
@@ -49,7 +86,7 @@ namespace DatasManagment
                 dataRepository.DeleteClient(name);
             else throw new Exception("Data base doesn't contain state like that!");
         }
-        public string ShowVehicles(IEnumerable<Machines> machines)
+        public string ShowMachines(IEnumerable<Machines> machines)
         {
             string machinesReport = "";
             foreach (var x in machines)

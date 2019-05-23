@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ModelUTests\ModelUTests.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
