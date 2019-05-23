@@ -8,22 +8,26 @@ namespace DatasManagment
 {
     public class DataContext
     {
-        private IEnumerable<Client> clientList;
-        private IEnumerable<MachineState> machinesState;
+        private List<Human> clientList;
+        private List<Human> workerList;
+        private List<MachineState> machinesState;
         private ObservableCollection<Event> eventCollection;
         private Dictionary<string, Machines> machinesDictionary;
 
         public DataContext()
         {
             MachinesState = new List<MachineState>();
-            ClientList = new List<Client>();
+            ClientList = new List<Human>();
+            WorkerList = new List<Human>();
             EventCollection = new ObservableCollection<Event>();
             EventCollection.CollectionChanged += Events_CollectionChanged;
         }
 
-        public IEnumerable<Client> ClientList { get => clientList; set => clientList = value; }
-        public IEnumerable<MachineState> MachinesState { get => machinesState; set => machinesState = value; }
+        public List<Human> ClientList { get => clientList; set => clientList = value; }
+        public List<MachineState> MachinesState { get => machinesState; set => machinesState = value; }
         public ObservableCollection<Event> EventCollection { get => eventCollection; set => eventCollection = value; }
+        public Dictionary<string, Machines> MachinesDictionary { get => machinesDictionary; set => machinesDictionary = value; }
+        public List<Human> WorkerList { get => workerList; set => workerList = value; }
 
         private void Events_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {

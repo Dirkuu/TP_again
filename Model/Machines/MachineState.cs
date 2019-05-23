@@ -17,10 +17,11 @@ namespace Model
         public bool IsWorking { get => isWorking; set => isWorking = value; }
         public double CashInside { get => cashInside; set => cashInside = value; }
         public bool IsTaken { get => isTaken; set => isTaken = value; }
+        public DateTimeOffset DateOfUsage { get => dateOfUsage; set => dateOfUsage = value; }
 
         public override string ToString()
         {
-            return $"Machine : {machine.ToString()} Availibility : {isTaken} Is working : {isWorking} : date : {dateOfUsage} ";
+            return $"Machine : {machine.ToString()} Availibility : {isTaken} Is working : {isWorking} : date : {DateOfUsage} ";
         }
     }
 }

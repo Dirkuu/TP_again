@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Model
 {
-    public class Client
+    public class Client : Human
     {
+        private int tokens;
+
+        public int Tokens { get => tokens; set => tokens = value; }
     }
 }

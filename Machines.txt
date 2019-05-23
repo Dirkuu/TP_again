@@ -1,0 +1,5 @@
+0, Anabele, 12
+1, Konrad, 13
+2, Bob, 15
+3, Zuzana, 17
+4, Kak, 19
