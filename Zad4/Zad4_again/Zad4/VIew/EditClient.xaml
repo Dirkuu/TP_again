@@ -10,7 +10,10 @@
         <TextBox Text="{Binding NewFirstName}" HorizontalAlignment="Left" Margin="11,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50"/>
         <TextBox HorizontalAlignment="Left" Margin="163,10,0,0" TextWrapping="Wrap" Text="{Binding NewLastName}" VerticalAlignment="Top" Width="59"/>
         <TextBox HorizontalAlignment="Left" Margin="88,10,0,0" TextWrapping="Wrap" Text="{Binding Coins}" VerticalAlignment="Top" Width="54"/>
-        <Button Command="{Binding UpdateClient, UpdateSourceTrigger=PropertyChanged}" Content="Edit Client" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="13,49,0,0"/>
+        <Button Command="{Binding UpdateClient, UpdateSourceTrigger=PropertyChanged}" Content="Edit Client" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="309,13,0,0"/>
+        <Label Content="Cash" HorizontalAlignment="Left" Margin="88,41,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label Content="FirstName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,41,0,0"/>
+        <Label Content="LastName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="163,41,0,0"/>
 
     </Grid>
 </Window>

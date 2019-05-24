@@ -5,20 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zad4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="471.409">
     <Grid DataContext="{StaticResource UserViewModel}">
         <ListBox ItemsSource="{Binding Clients, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentClient}" HorizontalAlignment="Left" Height="100" Margin="20,292,0,0" VerticalAlignment="Top" Width="186">
             <ListBox.ItemTemplate>
-            <DataTemplate>
+                <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{Binding firstName}"/>
-                    <Label Content="{Binding lastName}"/>
-                    </StackPanel>
-            </DataTemplate>
+                        <Label Content="{Binding lastName}"/>
+                        <Label Content="{Binding Cash}"/>
 
-        </ListBox.ItemTemplate>
+                    </StackPanel>
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
         </ListBox>
         <Button Command="{Binding HandleEdit,  UpdateSourceTrigger=PropertyChanged}"  Content="Edit Client" HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox ItemsSource="{Binding Banks, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentBank}" HorizontalAlignment="Left" Height="100" Margin="255,292,0,0" VerticalAlignment="Top" Width="170">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Cash}"/>
+                        <Label Content="{Binding Winner}"/>
+                    </StackPanel>
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Command="{Binding HandleGamble}" Content="Try your luck!" HorizontalAlignment="Left" Margin="106,203,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Margin="49,200,0,0" TextWrapping="Wrap" Text="{Binding BetAmmount}" VerticalAlignment="Top" Width="31"/>
+        <TextBox Name="FirstName" HorizontalAlignment="Left" Height="23" Margin="181,66,0,0" TextWrapping="Wrap" Text="{Binding NewFirstName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="LastName" HorizontalAlignment="Left" Height="23" Margin="324,66,0,0" TextWrapping="Wrap" Text="{Binding NewLastName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="{Binding ElementName=FirstName, Path=(Validation.Errors).CurrentItem.ErrorContent}" HorizontalAlignment="Left" Margin="181,104,0,0" VerticalAlignment="Top" Height="35" Width="120"/>
+        <Label Content="{Binding ElementName=LastName, Path=(Validation.Errors).CurrentItem.ErrorContent}" HorizontalAlignment="Left" Margin="324,104,0,0" VerticalAlignment="Top" Height="35" Width="120"/>
+        <Button Command="{Binding HandleNewClient}" Content="Add Client" HorizontalAlignment="Left" Margin="350,139,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding DeleteClient}" Content="DeleteClient" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="204,203,0,0"/>
+        <Label Content="Cash to bet&#xD;&#xA;" HorizontalAlignment="Left" Margin="30,144,0,0" VerticalAlignment="Top" Height="38"/>
+        <Label Content="First Name&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="181,28,0,0"/>
+        <Label Content="Last Name&#xD;&#xA;" HorizontalAlignment="Left" Margin="324,28,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="Bank" HorizontalAlignment="Left" Margin="288,261,0,0" VerticalAlignment="Top"/>
+        <Label Content="Client&#xD;&#xA;" HorizontalAlignment="Left" Margin="95,261,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

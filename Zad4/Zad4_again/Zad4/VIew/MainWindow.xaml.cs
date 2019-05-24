@@ -27,5 +27,7 @@ namespace Zad4
             Console.WriteLine("DOIWOKR");
             InitializeComponent();
         }
+
+ 
     }
 }

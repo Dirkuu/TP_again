@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="localdb" Class="DataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\localdb.mdf;Integrated Security=True" SettingsObjectName="DatasLayer.Properties.Settings" SettingsPropertyName="localdbConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Bank" Member="Banks">
-    <Type Name="Bank">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Cash" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="Winner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Client_Bank" Member="Client" ThisKey="Winner" OtherKey="Id" Type="Client" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Client" Member="Clients">
     <Type Name="Client">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -15,6 +7,14 @@
       <Column Name="lastName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Cash" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Client_Bank" Member="Banks" ThisKey="Id" OtherKey="Winner" Type="Bank" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bank" Member="Banks">
+    <Type Name="Bank">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cash" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Winner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Client_Bank" Member="Client" ThisKey="Winner" OtherKey="Id" Type="Client" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

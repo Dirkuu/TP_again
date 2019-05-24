@@ -30,12 +30,12 @@ namespace DatasLayer
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertBank(Bank instance);
-    partial void UpdateBank(Bank instance);
-    partial void DeleteBank(Bank instance);
     partial void InsertClient(Client instance);
     partial void UpdateClient(Client instance);
     partial void DeleteClient(Client instance);
+    partial void InsertBank(Bank instance);
+    partial void UpdateBank(Bank instance);
+    partial void DeleteBank(Bank instance);
     #endregion
 		
 		public DataContextDataContext() : 
@@ -68,14 +68,6 @@ namespace DatasLayer
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Bank> Banks
-		{
-			get
-			{
-				return this.GetTable<Bank>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Client> Clients
 		{
 			get
@@ -83,155 +75,12 @@ namespace DatasLayer
 				return this.GetTable<Client>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bank")]
-	public partial class Bank : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Cash;
-		
-		private System.Nullable<int> _Winner;
-		
-		private EntityRef<Client> _Client;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnCashChanging(string value);
-    partial void OnCashChanged();
-    partial void OnWinnerChanging(System.Nullable<int> value);
-    partial void OnWinnerChanged();
-    #endregion
-		
-		public Bank()
-		{
-			this._Client = default(EntityRef<Client>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
+		public System.Data.Linq.Table<Bank> Banks
 		{
 			get
 			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cash", DbType="NChar(10)")]
-		public string Cash
-		{
-			get
-			{
-				return this._Cash;
-			}
-			set
-			{
-				if ((this._Cash != value))
-				{
-					this.OnCashChanging(value);
-					this.SendPropertyChanging();
-					this._Cash = value;
-					this.SendPropertyChanged("Cash");
-					this.OnCashChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Winner", DbType="Int")]
-		public System.Nullable<int> Winner
-		{
-			get
-			{
-				return this._Winner;
-			}
-			set
-			{
-				if ((this._Winner != value))
-				{
-					if (this._Client.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnWinnerChanging(value);
-					this.SendPropertyChanging();
-					this._Winner = value;
-					this.SendPropertyChanged("Winner");
-					this.OnWinnerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_Bank", Storage="_Client", ThisKey="Winner", OtherKey="Id", IsForeignKey=true)]
-		public Client Client
-		{
-			get
-			{
-				return this._Client.Entity;
-			}
-			set
-			{
-				Client previousValue = this._Client.Entity;
-				if (((previousValue != value) 
-							|| (this._Client.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Client.Entity = null;
-						previousValue.Banks.Remove(this);
-					}
-					this._Client.Entity = value;
-					if ((value != null))
-					{
-						value.Banks.Add(this);
-						this._Winner = value.Id;
-					}
-					else
-					{
-						this._Winner = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Client");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<Bank>();
 			}
 		}
 	}
@@ -395,6 +244,157 @@ namespace DatasLayer
 		{
 			this.SendPropertyChanging();
 			entity.Client = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bank")]
+	public partial class Bank : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _Cash;
+		
+		private System.Nullable<int> _Winner;
+		
+		private EntityRef<Client> _Client;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCashChanging(System.Nullable<int> value);
+    partial void OnCashChanged();
+    partial void OnWinnerChanging(System.Nullable<int> value);
+    partial void OnWinnerChanged();
+    #endregion
+		
+		public Bank()
+		{
+			this._Client = default(EntityRef<Client>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cash", DbType="Int")]
+		public System.Nullable<int> Cash
+		{
+			get
+			{
+				return this._Cash;
+			}
+			set
+			{
+				if ((this._Cash != value))
+				{
+					this.OnCashChanging(value);
+					this.SendPropertyChanging();
+					this._Cash = value;
+					this.SendPropertyChanged("Cash");
+					this.OnCashChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Winner", DbType="Int")]
+		public System.Nullable<int> Winner
+		{
+			get
+			{
+				return this._Winner;
+			}
+			set
+			{
+				if ((this._Winner != value))
+				{
+					if (this._Client.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnWinnerChanging(value);
+					this.SendPropertyChanging();
+					this._Winner = value;
+					this.SendPropertyChanged("Winner");
+					this.OnWinnerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Client_Bank", Storage="_Client", ThisKey="Winner", OtherKey="Id", IsForeignKey=true)]
+		public Client Client
+		{
+			get
+			{
+				return this._Client.Entity;
+			}
+			set
+			{
+				Client previousValue = this._Client.Entity;
+				if (((previousValue != value) 
+							|| (this._Client.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Client.Entity = null;
+						previousValue.Banks.Remove(this);
+					}
+					this._Client.Entity = value;
+					if ((value != null))
+					{
+						value.Banks.Add(this);
+						this._Winner = value.Id;
+					}
+					else
+					{
+						this._Winner = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Client");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

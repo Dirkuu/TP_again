@@ -47,5 +47,97 @@ namespace DatasLayer
             }
         }
 
+        public static void UpdateBank(Bank v)
+        {
+            var query = from Bank in dataContext.Banks where Bank.Id == v.Id select Bank;
+            foreach (Bank cl in query)
+            {
+                cl.Cash = v.Cash;
+                cl.Winner = v.Winner;
+                cl.Id = v.Id;
+            }
+            try
+            {
+                dataContext.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        public static void DeleteBank(Bank V)
+        {
+            var query = (from Bank in dataContext.Banks
+                         where Bank == V
+                         select Bank);
+
+            if (query != null)
+                foreach (var CL in query)
+                {
+                    dataContext.Banks.DeleteOnSubmit(CL);
+                }
+            try
+            {
+                dataContext.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        public static void DeleteClient(Client V)
+        {
+            var query = (from clients in dataContext.Clients
+                         where clients == V
+                         select clients);
+
+            if (query != null)
+                foreach (var CL in query)
+                {
+                    dataContext.Clients.DeleteOnSubmit(CL);
+                }
+            try
+            {
+                dataContext.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        public static void CreateClient(Client v)
+        {
+            dataContext.Clients.InsertOnSubmit(v);
+            try
+            {
+                dataContext.SubmitChanges();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+        public static void CreateBank(Bank v)
+        {
+            dataContext.Banks.InsertOnSubmit(v);
+            try
+            {
+                dataContext.SubmitChanges();
+
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+
+
+
+
     }
 }
