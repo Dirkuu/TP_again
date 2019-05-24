@@ -1,0 +1,6 @@
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4_again\obj\Debug\Zad4_again.csprojAssemblyReference.cache
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4_again\obj\Debug\View\MainWindow.g.cs
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4_again\obj\Debug\App.g.cs
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4_again\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4_again\obj\Debug\Zad4_again_MarkupCompile.cache
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4_again\obj\Debug\Zad4_again_MarkupCompile.lref

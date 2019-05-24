@@ -1,0 +1,9 @@
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\bin\Debug\localdb.mdf
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\bin\Debug\localdb_log.ldf
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\bin\Debug\DatasLayer.dll.config
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\bin\Debug\DatasLayer.dll
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\bin\Debug\DatasLayer.pdb
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\obj\Debug\DatasLayer.csproj.CoreCompileInputs.cache
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\obj\Debug\DatasLayer.dll
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\obj\Debug\DatasLayer.pdb
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\DatasLayer\obj\Debug\DatasLayer.csprojAssemblyReference.cache
