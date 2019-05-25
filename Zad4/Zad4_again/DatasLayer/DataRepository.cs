@@ -16,6 +16,12 @@ namespace DatasLayer
                 dataContext.CreateDatabase();
         }
 
+        public static void init()
+        {
+            if (!dataContext.DatabaseExists())
+                dataContext.CreateDatabase();
+        }
+
         public static List<Client> GetAllClients()
         {
             return (from Client in dataContext.Clients

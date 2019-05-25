@@ -1,0 +1,2 @@
+﻿INSERT INTO dbo.Bank
+VALUES (0, 1000000, 0)

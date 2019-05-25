@@ -1,5 +1,3 @@
-C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\bin\Release\localdb.mdf
-C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\bin\Release\localdb_log.ldf
 C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\bin\Release\Zad4.exe.config
 C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\bin\Release\Zad4.exe
 C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\bin\Release\Zad4.pdb
@@ -34,3 +32,5 @@ C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\obj\Release\Zad4.exe
 C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\obj\Release\Zad4.pdb
 C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\obj\Release\VIew\EditClient.g.cs
 C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\obj\Release\VIew\EditClient.baml
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\bin\Release\localdb.mdf
+C:\Users\addlu1\Documents\tp\TP_again\Zad4\Zad4_again\Zad4\bin\Release\localdb_log.ldf
