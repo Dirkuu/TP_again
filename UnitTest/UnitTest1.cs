@@ -26,7 +26,7 @@ namespace UnitTest
             var DataFill = new JSoupFill();
             dataContext = new DataContext();
             DatRep = new DataRepository(DataFill);
-            DataSer = new DataService { DataRepository = DatRep };
+            DataSer = new DataService(DatRep);
 
             newState = new Machines
             {
@@ -77,14 +77,7 @@ namespace UnitTest
             Console.WriteLine(DataSer.ShowBinded());
 
         }
-        [TestMethod]
-        public void ShouldContainFiveObjects()
-        {
-            Assert.AreEqual(DatRep.GetAllMachines().ToList().Count, 6);
-            Assert.AreEqual(DatRep.GetAllClients().ToList().Count, 6);
-            Assert.AreEqual(DatRep.GetAllStates().ToList().Count, 6);
-            Assert.AreEqual(DatRep.GetAllWorkers().ToList().Count, 5);
-        }
+
 
         [TestMethod]
         public void ShouldContainsFifteenObjectWithDifferentFill()
@@ -92,7 +85,7 @@ namespace UnitTest
             var DataFill = new DataFillStatic();
             var dcontext = new DataContext();
             var dRep = new DataRepository(DataFill);
-            var dSer = new DataService { DataRepository = DatRep };
+            var dSer = new DataService (dRep);
 
             Assert.AreEqual(dRep.GetAllMachines().ToList().Count, 15);
             Assert.AreEqual(dRep.GetAllClients().ToList().Count, 15);
@@ -185,6 +178,15 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod1()
         {
+            Client ta = new Client {
+                FirstName = "a",
+                LastName = "B",
+                ID = 2,
+                Tokens = 33
+
+            };
+            DataSer.AddClient(ta);
+            Assert.IsTrue(DatRep.GetAllClients().Contains(ta));
         }
     }
 }

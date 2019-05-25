@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DatasManagment\DatasManagment.csproj" />
-    <ProjectReference Include="..\ModelUTests\ModelUTests.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
