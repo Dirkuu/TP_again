@@ -27,7 +27,7 @@ namespace UnitTest
             dataContext = new DataContext();
             DatRep = new DataRepository(DataFill);
             DataSer = new DataService(DatRep);
-
+            DatRep.init();
             newState = new Machines
             {
                 Id = 333,
@@ -78,6 +78,39 @@ namespace UnitTest
 
         }
 
+        [TestMethod]
+        public void LoadCheckFor1000()
+        {
+            int i = 1000;
+            
+            while(i-- != 0)
+            {
+                DatRep.init(); 
+            }
+        }
+        [TestMethod]
+        public void LoadCheckFor100000()
+        {
+            int i = 100000;
+
+            while (i-- != 0)
+            {
+                DatRep.init();
+            }
+        }
+        [TestMethod]
+        public void LoadCheckFor10000000()
+        {
+            int i = 10000000;
+
+            while (i-- != 0)
+            {
+                DatRep.init();
+            }
+        }
+
+
+
 
         [TestMethod]
         public void ShouldContainsFifteenObjectWithDifferentFill()
@@ -86,6 +119,7 @@ namespace UnitTest
             var dcontext = new DataContext();
             var dRep = new DataRepository(DataFill);
             var dSer = new DataService (dRep);
+            dRep.init();
 
             Assert.AreEqual(dRep.GetAllMachines().ToList().Count, 15);
             Assert.AreEqual(dRep.GetAllClients().ToList().Count, 15);

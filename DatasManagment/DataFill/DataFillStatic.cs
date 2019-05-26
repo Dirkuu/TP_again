@@ -14,6 +14,7 @@ namespace DatasManagment
 
             while (k-- != 0)
             {
+                counter++;
                 Human client = new Client
                 {
                     FirstName = "FillMeUp",
