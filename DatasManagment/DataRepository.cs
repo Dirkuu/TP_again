@@ -19,12 +19,7 @@ namespace DatasManagment
 
             dataBase = new DataContext();
             filler = fill;
-        }
-
-        public void init ()
-        {
             filler.Fill(ref dataBase);
-
         }
 
         public void AddClient(Client name)

@@ -13,7 +13,7 @@ namespace DatasManagment
         {
             {
                 string fileName = "Clients.txt";
-                string path = Path.Combine("C:\\Users\\addlu1\\Documents\\tp\\TP_again", fileName);
+                string path = Path.Combine(Environment.CurrentDirectory, fileName);
                 string content;
                 int counter;
                 StreamReader str = new StreamReader(path, Encoding.UTF8);
@@ -32,7 +32,7 @@ namespace DatasManagment
                 };
 
                 fileName = "Workers.txt";
-                path = Path.Combine("C:\\Users\\addlu1\\Documents\\tp\\TP_again", fileName);
+                path = Path.Combine(Environment.CurrentDirectory, fileName);
                 StreamReader srrtr = new StreamReader(path, Encoding.UTF8);
 
                 while ((content = srrtr.ReadLine()) != null)
@@ -50,7 +50,7 @@ namespace DatasManagment
 
 
                 fileName = "Machines.txt";
-                path = Path.Combine("C:\\Users\\addlu1\\Documents\\tp\\TP_again", fileName);
+                path = Path.Combine(Environment.CurrentDirectory, fileName);
                 StreamReader strc = new StreamReader(path, Encoding.UTF8);
                 List<Machines> hold = new List<Machines>();
 
@@ -70,7 +70,7 @@ namespace DatasManagment
 
 
                 fileName = "State.txt";
-                path = Path.Combine("C:\\Users\\addlu1\\Documents\\tp\\TP_again", fileName);
+                path = Path.Combine(Environment.CurrentDirectory, fileName);
                 StreamReader State = new StreamReader(path, Encoding.UTF8);
                 counter = 0;
                 while ((content = State.ReadLine()) != null)

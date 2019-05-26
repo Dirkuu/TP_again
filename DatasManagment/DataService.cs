@@ -10,10 +10,7 @@ namespace DatasManagment
     {
         private DataRepository dataRepository;
 
-        public DataService(DataRepository datRep)
-        {
-            this.dataRepository = datRep;
-        }
+        public DataRepository DataRepository { get => dataRepository; set => dataRepository = value; }
 
         public void FillMachine(Machines argMachine, Worker argWorker, int coins)
         {

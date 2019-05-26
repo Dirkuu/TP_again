@@ -79,6 +79,18 @@ namespace UnitTest
         }
 
         [TestMethod]
+        public void LoadCheckFor10()
+        {
+            int i = 10;
+
+            while (i-- != 0)
+            {
+                DatRep.init();
+            }
+        }
+
+
+        [TestMethod]
         public void LoadCheckFor1000()
         {
             int i = 1000;
@@ -108,6 +120,18 @@ namespace UnitTest
                 DatRep.init();
             }
         }
+
+        [TestMethod]
+        public void LoadCheckFor1000000()
+        {
+            int i = 1000000;
+
+            while (i-- != 0)
+            {
+                DatRep.init();
+            }
+        }
+
 
 
 
